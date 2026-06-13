@@ -3,179 +3,509 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Candy Elsi | Official Artist Page</title>
+<title>Candy Elsi | Official Artist Website</title>
 
 <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+:root{
+    --bg-1:#0f0f1f;
+    --bg-2:#181830;
+    --bg-3:#2a1140;
+    --pink:#ff4d8d;
+    --purple:#8b5cf6;
+    --blue:#4cc9f0;
+    --white:#ffffff;
+    --glass:rgba(255,255,255,0.08);
+    --glass-border:rgba(255,255,255,0.12);
+}
 
-    body {
-        font-family: Arial, Helvetica, sans-serif;
-        background: #111;
-        color: #fff;
-        line-height: 1.6;
-    }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-    header {
-        background: linear-gradient(135deg, #ff4d8d, #7b2cff);
-        text-align: center;
-        padding: 80px 20px;
-    }
+html{
+    scroll-behavior:smooth;
+}
 
-    .logo {
-        font-size: 3rem;
-        font-weight: bold;
-        letter-spacing: 4px;
-        text-transform: uppercase;
-    }
+body{
+    font-family: Inter, Arial, sans-serif;
+    background:
+    linear-gradient(
+        135deg,
+        var(--bg-1),
+        var(--bg-2),
+        var(--bg-3)
+    );
+    color:var(--white);
+    line-height:1.6;
+}
 
-    .tagline {
-        margin-top: 10px;
-        font-size: 1.2rem;
-        opacity: 0.9;
-    }
+.container{
+    width:min(1100px,90%);
+    margin:auto;
+}
 
-    .btn {
-        display: inline-block;
-        margin-top: 25px;
-        padding: 12px 24px;
-        background: #fff;
-        color: #111;
-        text-decoration: none;
-        border-radius: 30px;
-        font-weight: bold;
-    }
+a{
+    text-decoration:none;
+    color:white;
+}
 
-    section {
-        max-width: 1000px;
-        margin: auto;
-        padding: 60px 20px;
-    }
+section{
+    padding:80px 0;
+}
 
-    h2 {
-        margin-bottom: 20px;
-        color: #ff4d8d;
-    }
+/* NAVBAR */
 
-    .album {
-        background: #1c1c1c;
-        padding: 30px;
-        border-radius: 12px;
-        margin-top: 20px;
-    }
+nav{
+    position:sticky;
+    top:0;
+    z-index:100;
+    backdrop-filter:blur(16px);
+    background:rgba(0,0,0,0.25);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+}
 
-    .album-title {
-        font-size: 2rem;
-        margin-bottom: 10px;
-    }
+.nav-wrapper{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 0;
+}
 
-    .track-list {
-        margin-top: 20px;
-        list-style-position: inside;
-    }
+.logo{
+    font-size:1.4rem;
+    font-weight:800;
+    letter-spacing:3px;
+}
 
+.nav-links{
+    display:flex;
+    gap:25px;
+}
 
-    .track-list li {
-        padding: 10px 0;
-        border-bottom: 1px solid #333;
-    }
+.nav-links a:hover{
+    color:var(--pink);
+}
 
-    .links {
-        display: flex;
-        gap: 15px;
-        flex-wrap: wrap;
-        margin-top: 25px;
-    }
+/* HERO */
 
-    .links a {
-        text-decoration: none;
-        color: white;
-        background: #ff4d8d;
-        padding: 12px 20px;
-        border-radius: 8px;
-        transition: 0.3s;
-    }
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+}
 
-    .links a:hover {
-        background: #ff70a7;
-    }
+.hero-content{
+    display:grid;
+    grid-template-columns:1fr 400px;
+    gap:60px;
+    align-items:center;
+}
 
-    footer {
-        text-align: center;
-        padding: 30px;
-        background: #0a0a0a;
-        color: #888;
-    }
+.badge{
+    display:inline-block;
+    padding:8px 14px;
+    border-radius:30px;
+    background:rgba(255,77,141,.15);
+    border:1px solid rgba(255,77,141,.3);
+    color:#ffd1e3;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(3rem,8vw,6rem);
+    line-height:1;
+    margin-bottom:20px;
+}
+
+.gradient-text{
+    background:linear-gradient(
+        90deg,
+        var(--pink),
+        var(--purple),
+        var(--blue)
+    );
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.tagline{
+    font-size:1.2rem;
+    color:#d7d7d7;
+    max-width:600px;
+    margin-bottom:30px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:14px 28px;
+    border-radius:999px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:linear-gradient(
+        90deg,
+        var(--pink),
+        var(--purple)
+    );
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+}
+
+.btn-secondary{
+    border:1px solid rgba(255,255,255,.2);
+    background:rgba(255,255,255,.05);
+}
+
+.btn-secondary:hover{
+    background:rgba(255,255,255,.1);
+}
+
+/* ALBUM ART */
+
+.album-cover{
+    aspect-ratio:1;
+    border-radius:24px;
+    background:
+    linear-gradient(
+        135deg,
+        var(--pink),
+        var(--purple),
+        var(--blue)
+    );
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:30px;
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.4);
+}
+
+.album-cover h2{
+    font-size:2rem;
+}
+
+.album-cover p{
+    opacity:.9;
+}
+
+/* CARDS */
+
+.glass{
+    background:var(--glass);
+    border:1px solid var(--glass-border);
+    backdrop-filter:blur(12px);
+    border-radius:24px;
+}
+
+/* STATS */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.stat{
+    text-align:center;
+    padding:30px;
+}
+
+.stat h3{
+    font-size:2rem;
+    color:var(--pink);
+}
+
+/* SECTION TITLE */
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:2.5rem;
+    margin-bottom:10px;
+}
+
+/* TRACKS */
+
+.track-list{
+    display:grid;
+    gap:15px;
+}
+
+.track{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    padding:20px;
+    transition:.3s;
+}
+
+.track:hover{
+    transform:translateY(-3px);
+    border-color:rgba(255,77,141,.4);
+}
+
+.track-number{
+    color:var(--pink);
+    font-size:1.2rem;
+    font-weight:700;
+    min-width:40px;
+}
+
+.track-name{
+    font-size:1.1rem;
+}
+
+/* PLATFORMS */
+
+.platforms{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.platform{
+    padding:30px;
+    text-align:center;
+    transition:.3s;
+}
+
+.platform:hover{
+    transform:translateY(-5px);
+}
+
+.platform h3{
+    margin-bottom:10px;
+}
+
+/* ABOUT */
+
+.about{
+    padding:40px;
+    text-align:center;
+    max-width:850px;
+    margin:auto;
+}
+
+.about p{
+    color:#d9d9d9;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:40px 20px;
+    border-top:1px solid rgba(255,255,255,.08);
+    color:#aaa;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.hero-content{
+    grid-template-columns:1fr;
+    text-align:center;
+}
+
+.hero-buttons{
+    justify-content:center;
+}
+
+.stats,
+.platforms{
+    grid-template-columns:1fr;
+}
+}
 </style>
 </head>
 
 <body>
 
-<header>
-    <div class="logo">Candy Elsi</div>
-    <p class="tagline">
-        Fresh melodies. Late-night vibes. The next voice of a new generation.
-    </p>
+<nav>
+    <div class="container nav-wrapper">
+        <div class="logo">CANDY ELSI</div>
 
-    <a href="#album" class="btn">Listen Now</a>
+        <div class="nav-links">
+            <a href="#music">Music</a>
+            <a href="#about">About</a>
+            <a href="#connect">Connect</a>
+        </div>
+    </div>
+</nav>
+
+<header class="hero">
+    <div class="container hero-content">
+
+        <div>
+            <span class="badge">🎵 Emerging Pop Artist</span>
+
+            <h1>
+                <span class="gradient-text">Candy Elsi</span>
+            </h1>
+
+            <p class="tagline">
+                Sweet Sounds. Midnight Stories.
+                Dream-pop melodies, emotional lyrics,
+                and unforgettable late-night vibes.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#music" class="btn btn-primary">
+                    Listen Now
+                </a>
+
+                <a href="https://instagram.com"
+                   target="_blank"
+                   class="btn btn-secondary">
+                    Follow on Instagram
+                </a>
+            </div>
+        </div>
+
+        <div class="album-cover">
+            <h2>MIDNIGHT SUGAR</h2>
+            <p>Debut Album</p>
+            <br>
+            <p>4 Original Tracks</p>
+        </div>
+
+    </div>
 </header>
 
-<section id="about">
-    <h2>About Candy Elsi</h2>
+<section>
+    <div class="container">
+        <div class="stats">
 
-    <p>
-        Candy Elsi is an emerging singer-songwriter blending modern pop,
-        dreamy vocals, and emotionally driven storytelling. With a unique
-        sound that balances energy and vulnerability, Candy Elsi is quickly
-        building a loyal audience across streaming platforms and social media.
-    </p>
-</section>
+            <div class="glass stat">
+                <h3>25K+</h3>
+                <p>Streams</p>
+            </div>
 
-<section id="album">
-    <h2>Featured Release</h2>
+            <div class="glass stat">
+                <h3>8K+</h3>
+                <p>Followers</p>
+            </div>
 
-    <div class="album">
-        <div class="album-title">Midnight Sugar</div>
+            <div class="glass stat">
+                <h3>4</h3>
+                <p>Tracks Released</p>
+            </div>
 
-        <p>
-            A debut collection of tracks exploring love, ambition,
-            heartbreak, and late-night dreams.
-        </p>
-
-        <ol class="track-list">
-            <li>Neon Hearts</li>
-            <li>Midnight Sugar</li>
-            <li>Lost in Stereo</li>
-            <li>Golden Skies</li>
-        </ol>
+        </div>
     </div>
 </section>
 
-<section id="listen">
-    <h2>Listen & Follow</h2>
+<section id="music">
+    <div class="container">
 
-    <p>Stream the music and stay connected.</p>
+        <div class="section-title">
+            <h2>Latest Release</h2>
+            <p>Midnight Sugar</p>
+        </div>
 
-    <div class="links">
-        <a href="https://spotify.com" target="_blank">
-            Spotify
-        </a>
+        <div class="track-list">
 
-        <a href="https://youtube.com" target="_blank">
-            YouTube
-        </a>
+            <div class="glass track">
+                <div class="track-number">01</div>
+                <div class="track-name">Neon Hearts</div>
+            </div>
 
-        <a href="https://instagram.com" target="_blank">
-            Instagram
-        </a>
+            <div class="glass track">
+                <div class="track-number">02</div>
+                <div class="track-name">Midnight Sugar</div>
+            </div>
+
+            <div class="glass track">
+                <div class="track-number">03</div>
+                <div class="track-name">Lost in Stereo</div>
+            </div>
+
+            <div class="glass track">
+                <div class="track-number">04</div>
+                <div class="track-name">Golden Skies</div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section id="connect">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Stream Everywhere</h2>
+            <p>Choose your favorite platform</p>
+        </div>
+
+        <div class="platforms">
+
+            <a href="https://spotify.com"
+               target="_blank"
+               class="glass platform">
+                <h3>Spotify</h3>
+                <p>Listen to the latest tracks</p>
+            </a>
+
+            <a href="https://youtube.com"
+               target="_blank"
+               class="glass platform">
+                <h3>YouTube</h3>
+                <p>Watch videos and live content</p>
+            </a>
+
+            <a href="https://instagram.com"
+               target="_blank"
+               class="glass platform">
+                <h3>Instagram</h3>
+                <p>Behind-the-scenes and updates</p>
+            </a>
+
+        </div>
+
+    </div>
+</section>
+
+<section id="about">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>About Candy Elsi</h2>
+        </div>
+
+        <div class="glass about">
+            <p>
+                Candy Elsi is a rising voice in modern dream-pop,
+                blending atmospheric production, heartfelt storytelling,
+                and infectious melodies. Inspired by city lights,
+                midnight adventures, and raw emotion, every song
+                captures a moment that listeners can truly connect with.
+            </p>
+        </div>
+
     </div>
 </section>
 
 <footer>
     <p>© 2026 Candy Elsi • Official Artist Website</p>
+    <p>Sweet Sounds. Midnight Stories.</p>
 </footer>
 
 </body>
